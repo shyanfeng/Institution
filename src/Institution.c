@@ -2,6 +2,7 @@
 #include "LinkedList.h"
 #include "Stack.h"
 #include "Institution.h"
+#include "CException.h"
 
 extern Stack stack;
 
@@ -68,4 +69,21 @@ int Institution_select(	LinkedList *inputList,
 	}
 	
 }
+
+int wasEstablishBefore(void *elem, void *year){
+	Institution *inst = (Institution*)elem;
+	int *specifiedYear = (int*)year;
+	
+	if(inst->yearEstablished < *specifiedYear){
+		return 1;
+	}else{
+		return 0;
+	}
+	
+	if(inst->yearEstablished > 2014){
+		Throw(ERROR_YEAR_ESTABLISHED);
+	}
+	
+}
+
 

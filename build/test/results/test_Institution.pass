@@ -7,22 +7,31 @@
   :line: 11
   :message: ''
 - :test: test_Institution_reverse_4_elememt
-  :line: 45
+  :line: 54
   :message: ''
 - :test: test_isUniversity_should_return_1_compare_of_institutions_is_same
-  :line: 86
+  :line: 106
   :message: ''
 - :test: test_isUniversity_should_return_0_compare_of_institutions_is_not_same
-  :line: 112
+  :line: 138
   :message: ''
 - :test: test_Institution_select_Unknown_only
-  :line: 138
+  :line: 170
+  :message: ''
+- :test: test_wasEstablishBefore_2014_and_after_1950_should_return_0
+  :line: 201
+  :message: ''
+- :test: test_wasEstablishBefore_2014_and_after_1950_should_return_1
+  :line: 224
+  :message: ''
+- :test: test_wasEstablishBefore_should_throw_exception_error_after_2014
+  :line: 247
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 5
-  :passed: 5
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []

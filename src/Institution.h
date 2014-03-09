@@ -7,6 +7,10 @@
 Stack stack;
 
 typedef enum{
+	ERROR_YEAR_ESTABLISHED
+}ExceptionError;
+
+typedef enum{
 	Unknown, 
 	University, 
 	UniversityCollege, 
@@ -28,5 +32,6 @@ int Institution_select(	LinkedList *inputList,
 						LinkedList *outputList,
 						void *criterion,
 						int (*compare)(void *, void *));
+int wasEstablishBefore(void *elem, void *year);
 
 #endif  //__INSTITUTION_H__

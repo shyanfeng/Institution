@@ -45,6 +45,9 @@ extern void test_Institution_reverse_4_elememt(void);
 extern void test_isUniversity_should_return_1_compare_of_institutions_is_same(void);
 extern void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(void);
 extern void test_Institution_select_Unknown_only(void);
+extern void test_wasEstablishBefore_2014_and_after_1950_should_return_0(void);
+extern void test_wasEstablishBefore_2014_and_after_1950_should_return_1(void);
+extern void test_wasEstablishBefore_should_throw_exception_error_after_2014(void);
 
 
 //=======Mock Management=====
@@ -84,10 +87,13 @@ int main(void)
   Unity.TestFile = "test_Institution.c";
   UnityBegin();
   RUN_TEST(test_Institution_reverse_3_elememt, 11);
-  RUN_TEST(test_Institution_reverse_4_elememt, 45);
-  RUN_TEST(test_isUniversity_should_return_1_compare_of_institutions_is_same, 86);
-  RUN_TEST(test_isUniversity_should_return_0_compare_of_institutions_is_not_same, 112);
-  RUN_TEST(test_Institution_select_Unknown_only, 138);
+  RUN_TEST(test_Institution_reverse_4_elememt, 54);
+  RUN_TEST(test_isUniversity_should_return_1_compare_of_institutions_is_same, 106);
+  RUN_TEST(test_isUniversity_should_return_0_compare_of_institutions_is_not_same, 138);
+  RUN_TEST(test_Institution_select_Unknown_only, 170);
+  RUN_TEST(test_wasEstablishBefore_2014_and_after_1950_should_return_0, 201);
+  RUN_TEST(test_wasEstablishBefore_2014_and_after_1950_should_return_1, 224);
+  RUN_TEST(test_wasEstablishBefore_should_throw_exception_error_after_2014, 247);
 
   return (UnityEnd());
 }

@@ -2,6 +2,7 @@
 #include "mock_Stack.h"
 #include "mock_LinkedList.h"
 #include "Institution.h"
+#include "CException.h"
 
 
 
@@ -34,43 +35,61 @@ void test_Institution_reverse_3_elememt(){
 
 
 
- List_removeHead_CMockExpectAndReturn(21, &inputList, &inst1);
-
- Stack_push_CMockExpect(22, &stack, &inst1);
 
 
 
- List_removeHead_CMockExpectAndReturn(24, &inputList, &inst2);
 
- Stack_push_CMockExpect(25, &stack, &inst2);
+ List_removeHead_CMockExpectAndReturn(23, &inputList, &inst1);
 
-
-
- List_removeHead_CMockExpectAndReturn(27, &inputList, &inst3);
-
- Stack_push_CMockExpect(28, &stack, &inst3);
+ Stack_push_CMockExpect(24, &stack, &inst1);
 
 
 
- List_removeHead_CMockExpectAndReturn(30, &inputList, ((void *)0));
+
+
+ List_removeHead_CMockExpectAndReturn(27, &inputList, &inst2);
+
+ Stack_push_CMockExpect(28, &stack, &inst2);
 
 
 
- Stack_pop_CMockExpectAndReturn(32, &stack, &inst3);
-
- List_addTail_CMockExpect(33, &outputList, &inst3);
 
 
+ List_removeHead_CMockExpectAndReturn(31, &inputList, &inst3);
 
- Stack_pop_CMockExpectAndReturn(35, &stack, &inst2);
-
- List_addTail_CMockExpect(36, &outputList, &inst2);
+ Stack_push_CMockExpect(32, &stack, &inst3);
 
 
 
- Stack_pop_CMockExpectAndReturn(38, &stack, &inst1);
 
- List_addTail_CMockExpect(39, &outputList, &inst1);
+
+ List_removeHead_CMockExpectAndReturn(35, &inputList, ((void *)0));
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(38, &stack, &inst3);
+
+ List_addTail_CMockExpect(39, &outputList, &inst3);
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(42, &stack, &inst2);
+
+ List_addTail_CMockExpect(43, &outputList, &inst2);
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(46, &stack, &inst1);
+
+ List_addTail_CMockExpect(47, &outputList, &inst1);
+
+
 
 
 
@@ -104,55 +123,77 @@ void test_Institution_reverse_4_elememt(){
 
 
 
- List_removeHead_CMockExpectAndReturn(56, &inputList, &inst1);
-
- Stack_push_CMockExpect(57, &stack, &inst1);
 
 
 
- List_removeHead_CMockExpectAndReturn(59, &inputList, &inst2);
 
- Stack_push_CMockExpect(60, &stack, &inst2);
+ List_removeHead_CMockExpectAndReturn(67, &inputList, &inst1);
 
-
-
- List_removeHead_CMockExpectAndReturn(62, &inputList, &inst3);
-
- Stack_push_CMockExpect(63, &stack, &inst3);
+ Stack_push_CMockExpect(68, &stack, &inst1);
 
 
 
- List_removeHead_CMockExpectAndReturn(65, &inputList, &inst4);
-
- Stack_push_CMockExpect(66, &stack, &inst4);
 
 
+ List_removeHead_CMockExpectAndReturn(71, &inputList, &inst2);
 
- List_removeHead_CMockExpectAndReturn(68, &inputList, ((void *)0));
+ Stack_push_CMockExpect(72, &stack, &inst2);
 
 
 
- Stack_pop_CMockExpectAndReturn(70, &stack, &inst4);
-
- List_addTail_CMockExpect(71, &outputList, &inst4);
 
 
+ List_removeHead_CMockExpectAndReturn(75, &inputList, &inst3);
 
- Stack_pop_CMockExpectAndReturn(73, &stack, &inst3);
-
- List_addTail_CMockExpect(74, &outputList, &inst3);
+ Stack_push_CMockExpect(76, &stack, &inst3);
 
 
 
- Stack_pop_CMockExpectAndReturn(76, &stack, &inst2);
-
- List_addTail_CMockExpect(77, &outputList, &inst2);
 
 
+ List_removeHead_CMockExpectAndReturn(79, &inputList, &inst4);
 
- Stack_pop_CMockExpectAndReturn(79, &stack, &inst1);
+ Stack_push_CMockExpect(80, &stack, &inst4);
 
- List_addTail_CMockExpect(80, &outputList, &inst1);
+
+
+
+
+ List_removeHead_CMockExpectAndReturn(83, &inputList, ((void *)0));
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(86, &stack, &inst4);
+
+ List_addTail_CMockExpect(87, &outputList, &inst4);
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(90, &stack, &inst3);
+
+ List_addTail_CMockExpect(91, &outputList, &inst3);
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(94, &stack, &inst2);
+
+ List_addTail_CMockExpect(95, &outputList, &inst2);
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(98, &stack, &inst1);
+
+ List_addTail_CMockExpect(99, &outputList, &inst1);
+
+
 
 
 
@@ -182,11 +223,19 @@ void test_isUniversity_should_return_1_compare_of_institutions_is_same(){
 
 
 
+
+
+
+
+
+
  InstitutionType instType1 = Unknown;
 
  compare = isUniversityCollege(&inst1, &instType1);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)97, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)120, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
@@ -194,7 +243,9 @@ void test_isUniversity_should_return_1_compare_of_institutions_is_same(){
 
  compare = isUniversityCollege(&inst2, &instType2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)101, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)125, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
@@ -202,7 +253,9 @@ void test_isUniversity_should_return_1_compare_of_institutions_is_same(){
 
  compare = isUniversityCollege(&inst3, &instType3);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)105, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)130, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
@@ -210,7 +263,7 @@ void test_isUniversity_should_return_1_compare_of_institutions_is_same(){
 
  compare = isUniversityCollege(&inst4, &instType4);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)109, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)135, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -234,11 +287,19 @@ void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(){
 
 
 
+
+
+
+
+
+
  InstitutionType instType1 = Unknown;
 
  compare = isUniversityCollege(&inst1, &instType1);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)123, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)152, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
@@ -246,7 +307,9 @@ void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(){
 
  compare = isUniversityCollege(&inst2, &instType2);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)127, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)157, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
@@ -254,7 +317,9 @@ void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(){
 
  compare = isUniversityCollege(&inst3, &instType3);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)131, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)162, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
@@ -262,7 +327,7 @@ void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(){
 
  compare = isUniversityCollege(&inst4, &instType4);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)135, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((compare)), (((void *)0)), (_U_UINT)167, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -292,30 +357,162 @@ void test_Institution_select_Unknown_only(){
 
 
 
- List_removeHead_CMockExpectAndReturn(150, &inputList, &inst1);
-
- List_removeHead_CMockExpectAndReturn(151, &inputList, &inst2);
-
- Stack_push_CMockExpect(152, &stack, &inst2);
-
- List_removeHead_CMockExpectAndReturn(153, &inputList, &inst3);
-
- List_removeHead_CMockExpectAndReturn(154, &inputList, &inst4);
 
 
 
- List_removeHead_CMockExpectAndReturn(156, &inputList, ((void *)0));
 
 
 
- Stack_pop_CMockExpectAndReturn(158, &stack, &inst3);
+ List_removeHead_CMockExpectAndReturn(185, &inputList, &inst1);
 
- List_addTail_CMockExpect(159, &outputList, &inst3);
+ List_removeHead_CMockExpectAndReturn(186, &inputList, &inst2);
+
+ Stack_push_CMockExpect(187, &stack, &inst2);
+
+ List_removeHead_CMockExpectAndReturn(188, &inputList, &inst3);
+
+ List_removeHead_CMockExpectAndReturn(189, &inputList, &inst4);
+
+
+
+ List_removeHead_CMockExpectAndReturn(191, &inputList, ((void *)0));
+
+
+
+
+
+ Stack_pop_CMockExpectAndReturn(194, &stack, &inst2);
+
+ List_addTail_CMockExpect(195, &outputList, &inst2);
 
 
 
  Institution_select( &inputList, &outputList,
 
       &instType, isUniversityCollege);
+
+}
+
+
+
+void test_wasEstablishBefore_2014_and_after_1950_should_return_0(){
+
+
+
+ int year = 1970;
+
+
+
+ Institution inst1 = {.yearEstablished = 1974};
+
+ Institution inst2 = {.yearEstablished = 1989};
+
+ Institution inst3 = {.yearEstablished = 1999};
+
+ Institution inst4 = {.yearEstablished = 2012};
+
+
+
+ wasEstablishBefore(&inst1, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)211, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ wasEstablishBefore(&inst2, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)214, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ wasEstablishBefore(&inst3, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)217, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ wasEstablishBefore(&inst4, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)220, UNITY_DISPLAY_STYLE_INT);
+
+
+
+}
+
+
+
+void test_wasEstablishBefore_2014_and_after_1950_should_return_1(){
+
+
+
+ int year = 1970;
+
+
+
+ Institution inst1 = {.yearEstablished = 1964};
+
+ Institution inst2 = {.yearEstablished = 1959};
+
+ Institution inst3 = {.yearEstablished = 1969};
+
+ Institution inst4 = {.yearEstablished = 1962};
+
+
+
+ wasEstablishBefore(&inst1, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)234, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ wasEstablishBefore(&inst2, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)237, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ wasEstablishBefore(&inst3, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)240, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ wasEstablishBefore(&inst4, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)243, UNITY_DISPLAY_STYLE_INT);
+
+
+
+}
+
+
+
+void test_wasEstablishBefore_should_throw_exception_error_after_2014(){
+
+
+
+ int year = 1970;
+
+ ExceptionError exception;
+
+
+
+ Institution inst1 = {.yearEstablished = 2168};
+
+
+
+ { jmp_buf *PrevFrame, NewFrame; unsigned int MY_ID = (0); PrevFrame = CExceptionFrames[(0)].pFrame; CExceptionFrames[MY_ID].pFrame = (jmp_buf*)(&NewFrame); CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); if (_setjmp(NewFrame) == 0) { if (&PrevFrame){
+
+  wasEstablishBefore(&inst1, &year);
+
+ }
+
+ else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { exception = CExceptionFrames[MY_ID].Exception; exception=exception; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A)){
+
+  UnityAssertEqualNumber((_U_SINT)((ERROR_YEAR_ESTABLISHED)), (_U_SINT)((exception)), (((void *)0)), (_U_UINT)258, UNITY_DISPLAY_STYLE_INT);
+
+ }
+
+
 
 }
