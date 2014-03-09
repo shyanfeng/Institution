@@ -487,7 +487,7 @@ void test_wasEstablishBefore_2014_and_before_1950_should_return_1(){
 
  wasEstablishBefore(&inst2, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)247, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst2, &year))), (((void *)0)), (_U_UINT)247, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -495,7 +495,7 @@ void test_wasEstablishBefore_2014_and_before_1950_should_return_1(){
 
  wasEstablishBefore(&inst3, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)251, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst3, &year))), (((void *)0)), (_U_UINT)251, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -503,7 +503,7 @@ void test_wasEstablishBefore_2014_and_before_1950_should_return_1(){
 
  wasEstablishBefore(&inst4, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)255, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst4, &year))), (((void *)0)), (_U_UINT)255, UNITY_DISPLAY_STYLE_INT);
 
 
 

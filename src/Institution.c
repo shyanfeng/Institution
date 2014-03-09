@@ -72,12 +72,14 @@ int Institution_select(	LinkedList *inputList,
 
 int wasEstablishBefore(void *elem, void *year){
 	Institution *inst = (Institution*)elem;
-	int *specifiedYear = (int*)year;
+	// Change void year to int
+	int *sYear = (int*)year;
 	
+	// More than 2014 will throw error
 	if(inst->yearEstablished > 2014){
 		Throw(ERROR_YEAR_ESTABLISHED);
 	}else{
-		if(inst->yearEstablished < *specifiedYear){
+		if(inst->yearEstablished < *sYear){
 			return 1;
 		}else{
 			return 0;

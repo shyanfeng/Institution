@@ -244,15 +244,15 @@ void test_wasEstablishBefore_2014_and_before_1950_should_return_1(){
 	
 	// Test the inst2 with year less than 1970
 	wasEstablishBefore(&inst2, &year);
-	TEST_ASSERT_EQUAL(1, wasEstablishBefore(&inst1, &year));
+	TEST_ASSERT_EQUAL(1, wasEstablishBefore(&inst2, &year));
 	
 	// Test the inst3 with year less than 1970
 	wasEstablishBefore(&inst3, &year);
-	TEST_ASSERT_EQUAL(1, wasEstablishBefore(&inst1, &year));
+	TEST_ASSERT_EQUAL(1, wasEstablishBefore(&inst3, &year));
 	
 	// Test the inst4 with year less than 1970
 	wasEstablishBefore(&inst4, &year);
-	TEST_ASSERT_EQUAL(1, wasEstablishBefore(&inst1, &year));
+	TEST_ASSERT_EQUAL(1, wasEstablishBefore(&inst4, &year));
 	
 }
 
