@@ -79,7 +79,7 @@ int main(void)
 {
   Unity.TestFile = "test_Institution.c";
   UnityBegin();
-  RUN_TEST(test_Institution_reverse_should_remove_head_and_put_in_stack, 10);
+  RUN_TEST(test_Institution_reverse_should_remove_head_and_put_in_stack, 11);
 
   return (UnityEnd());
 }

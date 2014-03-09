@@ -5,8 +5,8 @@
 :successes: []
 :failures:
 - :test: test_Institution_reverse_should_remove_head_and_put_in_stack
-  :line: 22
-  :message: Function 'List_removeHead' called earlier than expected.
+  :line: 37
+  :message: Function 'List_addTail' called earlier than expected.
 :ignores: []
 :counts:
   :total: 1
