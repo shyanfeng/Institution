@@ -46,8 +46,9 @@ extern void test_isUniversity_should_return_1_compare_of_institutions_is_same(vo
 extern void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(void);
 extern void test_Institution_select_Unknown_only(void);
 extern void test_wasEstablishBefore_2014_and_after_1950_should_return_0(void);
-extern void test_wasEstablishBefore_2014_and_after_1950_should_return_1(void);
+extern void test_wasEstablishBefore_2014_and_before_1950_should_return_1(void);
 extern void test_wasEstablishBefore_should_throw_exception_error_after_2014(void);
+extern void test_wasEstablishBefore_should_throw_exception_error_for_selected_is_after_2014(void);
 
 
 //=======Mock Management=====
@@ -92,8 +93,9 @@ int main(void)
   RUN_TEST(test_isUniversity_should_return_0_compare_of_institutions_is_not_same, 138);
   RUN_TEST(test_Institution_select_Unknown_only, 170);
   RUN_TEST(test_wasEstablishBefore_2014_and_after_1950_should_return_0, 201);
-  RUN_TEST(test_wasEstablishBefore_2014_and_after_1950_should_return_1, 224);
-  RUN_TEST(test_wasEstablishBefore_should_throw_exception_error_after_2014, 247);
+  RUN_TEST(test_wasEstablishBefore_2014_and_before_1950_should_return_1, 230);
+  RUN_TEST(test_wasEstablishBefore_should_throw_exception_error_after_2014, 259);
+  RUN_TEST(test_wasEstablishBefore_should_throw_exception_error_for_selected_is_after_2014, 276);
 
   return (UnityEnd());
 }

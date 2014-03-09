@@ -361,29 +361,29 @@ void test_Institution_select_Unknown_only(){
 
 
 
+ List_removeHead_CMockExpectAndReturn(184, &inputList, &inst1);
 
+ List_removeHead_CMockExpectAndReturn(185, &inputList, &inst2);
 
- List_removeHead_CMockExpectAndReturn(185, &inputList, &inst1);
+ Stack_push_CMockExpect(186, &stack, &inst2);
 
- List_removeHead_CMockExpectAndReturn(186, &inputList, &inst2);
+ List_removeHead_CMockExpectAndReturn(187, &inputList, &inst3);
 
- Stack_push_CMockExpect(187, &stack, &inst2);
-
- List_removeHead_CMockExpectAndReturn(188, &inputList, &inst3);
-
- List_removeHead_CMockExpectAndReturn(189, &inputList, &inst4);
+ List_removeHead_CMockExpectAndReturn(188, &inputList, &inst4);
 
 
 
- List_removeHead_CMockExpectAndReturn(191, &inputList, ((void *)0));
+ List_removeHead_CMockExpectAndReturn(190, &inputList, ((void *)0));
 
 
 
 
 
- Stack_pop_CMockExpectAndReturn(194, &stack, &inst2);
+ Stack_pop_CMockExpectAndReturn(193, &stack, &inst2);
 
- List_addTail_CMockExpect(195, &outputList, &inst2);
+ List_addTail_CMockExpect(194, &outputList, &inst2);
+
+
 
 
 
@@ -413,27 +413,39 @@ void test_wasEstablishBefore_2014_and_after_1950_should_return_0(){
 
 
 
+
+
+
+
+
+
  wasEstablishBefore(&inst1, &year);
-
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)211, UNITY_DISPLAY_STYLE_INT);
-
-
-
- wasEstablishBefore(&inst2, &year);
 
  UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)214, UNITY_DISPLAY_STYLE_INT);
 
 
 
+
+
+ wasEstablishBefore(&inst2, &year);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)218, UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
  wasEstablishBefore(&inst3, &year);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)217, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)222, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
  wasEstablishBefore(&inst4, &year);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)220, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)226, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -441,11 +453,15 @@ void test_wasEstablishBefore_2014_and_after_1950_should_return_0(){
 
 
 
-void test_wasEstablishBefore_2014_and_after_1950_should_return_1(){
+void test_wasEstablishBefore_2014_and_before_1950_should_return_1(){
 
 
 
  int year = 1970;
+
+
+
+
 
 
 
@@ -459,27 +475,35 @@ void test_wasEstablishBefore_2014_and_after_1950_should_return_1(){
 
 
 
+
+
  wasEstablishBefore(&inst1, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)234, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)243, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
  wasEstablishBefore(&inst2, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)237, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)247, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
  wasEstablishBefore(&inst3, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)240, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)251, UNITY_DISPLAY_STYLE_INT);
+
+
 
 
 
  wasEstablishBefore(&inst4, &year);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)243, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((wasEstablishBefore(&inst1, &year))), (((void *)0)), (_U_UINT)255, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -497,7 +521,9 @@ void test_wasEstablishBefore_should_throw_exception_error_after_2014(){
 
 
 
- Institution inst1 = {.yearEstablished = 2168};
+ Institution inst1 = {.yearEstablished = 2854};
+
+
 
 
 
@@ -509,7 +535,67 @@ void test_wasEstablishBefore_should_throw_exception_error_after_2014(){
 
  else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { exception = CExceptionFrames[MY_ID].Exception; exception=exception; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A)){
 
-  UnityAssertEqualNumber((_U_SINT)((ERROR_YEAR_ESTABLISHED)), (_U_SINT)((exception)), (((void *)0)), (_U_UINT)258, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((ERROR_YEAR_ESTABLISHED)), (_U_SINT)((exception)), (((void *)0)), (_U_UINT)271, UNITY_DISPLAY_STYLE_INT);
+
+ }
+
+
+
+}
+
+
+
+void test_wasEstablishBefore_should_throw_exception_error_for_selected_is_after_2014(){
+
+ LinkedList inputList;
+
+ LinkedList outputList;
+
+
+
+ int year = 1970;
+
+ ExceptionError exception;
+
+
+
+
+
+ Institution inst1 = {.yearEstablished = 1964};
+
+ Institution inst2 = {.yearEstablished = 2111};
+
+ Institution inst3 = {.yearEstablished = 1969};
+
+ Institution inst4 = {.yearEstablished = 1962};
+
+
+
+
+
+ List_removeHead_CMockExpectAndReturn(290, &inputList, &inst1);
+
+ Stack_push_CMockExpect(291, &stack, &inst1);
+
+
+
+
+
+ List_removeHead_CMockExpectAndReturn(294, &inputList, &inst2);
+
+
+
+ { jmp_buf *PrevFrame, NewFrame; unsigned int MY_ID = (0); PrevFrame = CExceptionFrames[(0)].pFrame; CExceptionFrames[MY_ID].pFrame = (jmp_buf*)(&NewFrame); CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); if (_setjmp(NewFrame) == 0) { if (&PrevFrame){
+
+  Institution_select( &inputList, &outputList,
+
+       &year, wasEstablishBefore);
+
+ }
+
+ else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { exception = CExceptionFrames[MY_ID].Exception; exception=exception; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A)){
+
+  UnityAssertEqualNumber((_U_SINT)((ERROR_YEAR_ESTABLISHED)), (_U_SINT)((exception)), (((void *)0)), (_U_UINT)301, UNITY_DISPLAY_STYLE_INT);
 
  }
 

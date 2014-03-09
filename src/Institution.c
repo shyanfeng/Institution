@@ -74,14 +74,14 @@ int wasEstablishBefore(void *elem, void *year){
 	Institution *inst = (Institution*)elem;
 	int *specifiedYear = (int*)year;
 	
-	if(inst->yearEstablished < *specifiedYear){
-		return 1;
-	}else{
-		return 0;
-	}
-	
 	if(inst->yearEstablished > 2014){
 		Throw(ERROR_YEAR_ESTABLISHED);
+	}else{
+		if(inst->yearEstablished < *specifiedYear){
+			return 1;
+		}else{
+			return 0;
+		}
 	}
 	
 }

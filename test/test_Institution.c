@@ -227,7 +227,7 @@ void test_wasEstablishBefore_2014_and_after_1950_should_return_0(){
 	
 }
 
-void test_wasEstablishBefore_2014_and_after_1950_should_return_1(){
+void test_wasEstablishBefore_2014_and_before_1950_should_return_1(){
 	
 	int year = 1970;
 	
@@ -261,7 +261,7 @@ void test_wasEstablishBefore_should_throw_exception_error_after_2014(){
 	int year = 1970;
 	ExceptionError exception;
 	
-	Institution inst1 = {.yearEstablished = 2168};
+	Institution inst1 = {.yearEstablished = 2854};
 	
 	// Throw the exception when it is error
 	Try{
@@ -273,3 +273,32 @@ void test_wasEstablishBefore_should_throw_exception_error_after_2014(){
 	
 }
 
+void test_wasEstablishBefore_should_throw_exception_error_for_selected_is_after_2014(){
+	LinkedList inputList;
+	LinkedList outputList;
+	
+	int year = 1970;
+	ExceptionError exception;
+
+	
+	Institution inst1 = {.yearEstablished = 1964};
+	Institution inst2 = {.yearEstablished = 2111};
+	Institution inst3 = {.yearEstablished = 1969};
+	Institution inst4 = {.yearEstablished = 1962};
+	
+	// No error detected
+	List_removeHead_ExpectAndReturn(&inputList, &inst1);
+	Stack_push_Expect(&stack, &inst1);
+	
+	// Error detected and throw
+	List_removeHead_ExpectAndReturn(&inputList, &inst2);
+
+	Try{
+		Institution_select(	&inputList, &outputList, 
+							&year, wasEstablishBefore);
+	}
+	Catch(exception){
+		TEST_ASSERT_EQUAL(ERROR_YEAR_ESTABLISHED, exception);
+	}
+	
+}

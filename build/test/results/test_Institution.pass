@@ -21,17 +21,20 @@
 - :test: test_wasEstablishBefore_2014_and_after_1950_should_return_0
   :line: 201
   :message: ''
-- :test: test_wasEstablishBefore_2014_and_after_1950_should_return_1
-  :line: 224
+- :test: test_wasEstablishBefore_2014_and_before_1950_should_return_1
+  :line: 230
   :message: ''
 - :test: test_wasEstablishBefore_should_throw_exception_error_after_2014
-  :line: 247
+  :line: 259
+  :message: ''
+- :test: test_wasEstablishBefore_should_throw_exception_error_for_selected_is_after_2014
+  :line: 276
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 8
-  :passed: 8
+  :total: 9
+  :passed: 9
   :failed: 0
   :ignored: 0
 :stdout: []
