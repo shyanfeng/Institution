@@ -41,6 +41,10 @@ char* GlobalOrderError;
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_Institution_reverse_3_elememt(void);
+extern void test_Institution_reverse_4_elememt(void);
+extern void test_isUniversity_should_return_1_compare_of_institutions_is_same(void);
+extern void test_isUniversity_should_return_0_compare_of_institutions_is_not_same(void);
+extern void test_Institution_select_Unknown_only(void);
 
 
 //=======Mock Management=====
@@ -80,6 +84,10 @@ int main(void)
   Unity.TestFile = "test_Institution.c";
   UnityBegin();
   RUN_TEST(test_Institution_reverse_3_elememt, 11);
+  RUN_TEST(test_Institution_reverse_4_elememt, 45);
+  RUN_TEST(test_isUniversity_should_return_1_compare_of_institutions_is_same, 86);
+  RUN_TEST(test_isUniversity_should_return_0_compare_of_institutions_is_not_same, 112);
+  RUN_TEST(test_Institution_select_Unknown_only, 138);
 
   return (UnityEnd());
 }
