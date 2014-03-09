@@ -14,7 +14,7 @@ void tearDown(){}
 
 
 
-void test_Institution_reverse_should_remove_head_and_put_in_stack(){
+void test_Institution_reverse_3_elememt(){
 
  LinkedList inputList;
 
@@ -36,15 +36,15 @@ void test_Institution_reverse_should_remove_head_and_put_in_stack(){
 
 
 
+ List_removeHead_CMockExpectAndReturn(22, &inputList, &inst2);
+
+ Stack_push_CMockExpect(23, &stack, &inst2);
 
 
 
+ List_removeHead_CMockExpectAndReturn(25, &inputList, &inst3);
 
-
-
-
-
-
+ Stack_push_CMockExpect(26, &stack, &inst3);
 
 
 
@@ -52,15 +52,15 @@ void test_Institution_reverse_should_remove_head_and_put_in_stack(){
 
 
 
+ Stack_pop_CMockExpectAndReturn(30, &stack, &inst3);
+
+ List_addTail_CMockExpect(31, &outputList, &inst3);
 
 
 
+ Stack_pop_CMockExpectAndReturn(33, &stack, &inst2);
 
-
-
-
-
-
+ List_addTail_CMockExpect(34, &outputList, &inst2);
 
 
 

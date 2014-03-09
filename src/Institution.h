@@ -4,7 +4,7 @@
 #include "LinkedList.h"
 #include "Stack.h"
 
-extern Stack stack;
+Stack stack;
 
 typedef enum{
 	Unknown, 
